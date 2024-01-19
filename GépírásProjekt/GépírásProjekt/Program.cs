@@ -13,7 +13,14 @@ namespace GépírásProjekt
             string file = "szoveg.txt";
             string charactherFile = "fingerOrder.csv";
             Gépírás gí = new Gépírás(file,charactherFile);
-            
+
+            gí.AnalyzeText();
+            gí.PrintFingerLoad();
+       
+            gí.GenerateCharacterStatistics();
+            gí.PrintCharacterStatistics();
+
+            gí.SaveCharacterStatisticsToFile("karakteradatgyujtes.txt");
 
             Console.ReadLine();
         }

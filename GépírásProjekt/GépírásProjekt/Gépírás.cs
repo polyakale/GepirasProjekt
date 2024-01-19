@@ -31,44 +31,5 @@ namespace GépírásProjekt
             }
         }
 
-        public void AnalyzeText()
-        {
-            if (!File.Exists(file))
-            {
-                Console.WriteLine("The specified text file does not exist.");
-                return;
-            }
-            string text = File.ReadAllText(file);
-            int currentHand = 0;
-            int currentFinger = 0;
-
-            foreach (char character in text)
-            {
-                ACharacter aCharacter = characters.Find(c => c.character == character);
-
-                if (aCharacter != null)
-                {
-                    IncreaseFingerLoad(currentHand, aCharacter.pressingFinger);
-                    IncreaseFingerLoad(currentHand, aCharacter.additionalPressingFinger);
-
-                    UpdateCharacterStatistics(aCharacter.character, currentHand, currentFinger);
-
-                    if (aCharacter.additionalPressingFinger != 0)
-                    {
-                        currentHand = (currentHand + 1) % 2;
-                    }
-                }
-            }
-        }
-
-        private void IncreaseFingerLoad(int hand, int fingerNumber)
-        {
-            Console.WriteLine($"Hand: {hand}, Finger: {fingerNumber}");
-        }
-
-        private void UpdateCharacterStatistics(char character, int hand, int fingerNumber)
-        {
-            Console.WriteLine($"Character: {character}, Hand: {hand}, Finger: {fingerNumber}");
-        }
     }
 }
