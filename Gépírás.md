@@ -33,7 +33,7 @@ A táblázat rendezése: `karaterleütés-szám` szerint csökkenőben.
 1. A program a prancssori paraméterben kapja meg a bemeneti szövegfájlt: `szoveg.txt`
     - ha a fájl nem létezik, kiírja ezt, és leáll
 
-2. Elvégzi a statisztikai elemést és kiírja az ujjak százalékos és számszerű terhelését a képernyőre jól áttekinthető formában.
+2. Elvégzi a statisztikai elemzést és kiírja az ujjak százalékos és számszerű terhelését a képernyőre jól áttekinthető formában.
 
 3. Elkészíti a `karakteradatgyujtes.txt` fájlt.
 
