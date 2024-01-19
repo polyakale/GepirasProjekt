@@ -1,0 +1,7 @@
+C:\tanulók\2023-2024\12.D\Polyák Alex János\1. FÉLÉV\PROJEKT\GepirasProjekt\GépírásProjekt\GépírásProjekt\bin\Debug\GépírásProjekt.exe.config
+C:\tanulók\2023-2024\12.D\Polyák Alex János\1. FÉLÉV\PROJEKT\GepirasProjekt\GépírásProjekt\GépírásProjekt\bin\Debug\GépírásProjekt.exe
+C:\tanulók\2023-2024\12.D\Polyák Alex János\1. FÉLÉV\PROJEKT\GepirasProjekt\GépírásProjekt\GépírásProjekt\bin\Debug\GépírásProjekt.pdb
+C:\tanulók\2023-2024\12.D\Polyák Alex János\1. FÉLÉV\PROJEKT\GepirasProjekt\GépírásProjekt\GépírásProjekt\obj\Debug\GépírásProjekt.csproj.AssemblyReference.cache
+C:\tanulók\2023-2024\12.D\Polyák Alex János\1. FÉLÉV\PROJEKT\GepirasProjekt\GépírásProjekt\GépírásProjekt\obj\Debug\GépírásProjekt.csproj.CoreCompileInputs.cache
+C:\tanulók\2023-2024\12.D\Polyák Alex János\1. FÉLÉV\PROJEKT\GepirasProjekt\GépírásProjekt\GépírásProjekt\obj\Debug\GépírásProjekt.exe
+C:\tanulók\2023-2024\12.D\Polyák Alex János\1. FÉLÉV\PROJEKT\GepirasProjekt\GépírásProjekt\GépírásProjekt\obj\Debug\GépírásProjekt.pdb

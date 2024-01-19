@@ -31,5 +31,20 @@ namespace GépírásProjekt
             }
         }
 
+        public void AnalyzeText()
+        {
+            if (!File.Exists(file))
+            {
+                Console.WriteLine("The specified text file does not exist.");
+                return;
+            }
+            string text = File.ReadAllText(file);
+
+            foreach (char character in text)
+            {
+                ACharacter aCharacter = characters.Find(c => c.character == character);
+            }
+        }
+
     }
 }
