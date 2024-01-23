@@ -10,6 +10,7 @@ namespace GépírásProjekt
         private string file;
         private string charactherFile;
         List<ACharacter> characters = new List<ACharacter>();
+        private Dictionary<char, ACharacter> fingerMapping;
 
         public Gépírás(string file, string charactherFile)
         {
@@ -18,10 +19,15 @@ namespace GépírásProjekt
             ReadIn();
         }
 
+        internal void StatisticalAnalysis()
+        {
+            ;
+        }
+
         private void ReadIn()
         {
             string[] rows = File.ReadAllLines(charactherFile);
-            foreach (string row in rows.Skip(1))
+            foreach (string row in rows)
             {
                 string[] column = row.Split(';');
                 char character = char.Parse(column[0]);
@@ -30,6 +36,6 @@ namespace GépírásProjekt
                 characters.Add(new ACharacter(character, pressingFinger, additionalPressingFinger));
             }
         }
-
+        
     }
 }

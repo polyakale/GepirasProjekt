@@ -38,12 +38,3 @@ A táblázat rendezése: `karaterleütés-szám` szerint csökkenőben.
 3. Elkészíti a `karakteradatgyujtes.txt` fájlt.
 
 4. A program a képernyőn informálja a felhasználót, hogy melyik fájlba mi készült el.
-
-
-
-
-
-
-
-
-
