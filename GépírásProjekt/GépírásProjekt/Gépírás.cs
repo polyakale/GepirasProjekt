@@ -10,7 +10,7 @@ namespace GépírásProjekt
         private string file;
         private string charactherFile;
         List<ACharacter> characters = new List<ACharacter>();
-        private Dictionary<char, ACharacter> fingerMapping;
+        private Dictionary<char, ACharacter> fingerMapping = new Dictionary<char, ACharacter>();
 
         public Gépírás(string file, string charactherFile)
         {
@@ -21,7 +21,11 @@ namespace GépírásProjekt
 
         internal void StatisticalAnalysis()
         {
-            ;
+            for (int i = 0; i < file.Length; i++)
+            {
+                char chars = file[i];
+                fingerMapping.Add(chars);
+            }
         }
 
         private void ReadIn()
