@@ -10,7 +10,7 @@ namespace GépírásProjekt
         private string file;
         private string charactherFile;
         List<ACharacter> characters = new List<ACharacter>();
-        private Dictionary<char, ACharacter> fingerMapping = new Dictionary<char, ACharacter>();
+        Dictionary<char, Tuple<int, int>> fingerMapping = new Dictionary<char, Tuple<int, int>>();
 
         public Gépírás(string file, string charactherFile)
         {
@@ -19,12 +19,15 @@ namespace GépírásProjekt
             ReadIn();
         }
 
+        int[] statistics = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         internal void StatisticalAnalysis()
         {
             for (int i = 0; i < file.Length; i++)
             {
-                char chars = file[i];
-                fingerMapping.Add(chars);
+                if (characters[i].character == file[i])
+                {
+                    
+                }
             }
         }
 
@@ -38,8 +41,9 @@ namespace GépírásProjekt
                 int pressingFinger = int.Parse(column[1]);
                 int additionalPressingFinger = int.Parse(column[2]);
                 characters.Add(new ACharacter(character, pressingFinger, additionalPressingFinger));
+                fingerMapping.Add(character, new Tuple<int, int>(pressingFinger, additionalPressingFinger));
             }
         }
-        
+
     }
 }
