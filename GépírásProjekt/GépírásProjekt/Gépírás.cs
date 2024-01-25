@@ -22,12 +22,23 @@ namespace GépírásProjekt
         int[] statistics = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         internal void StatisticalAnalysis()
         {
-            for (int i = 0; i < file.Length; i++)
+            string text = File.ReadAllText(file);
+            foreach (var ch in text)
             {
-                if (characters[i].character == file[i])
+                if (fingerMapping.TryGetValue(ch, out var fingerInfo))
                 {
-                    
-                }
+                    statistics[fingerInfo.Item1 - 1]++;
+                    if (fingerInfo.Item2 != 0)
+                    {
+                        statistics[fingerInfo.Item2 - 1]++;
+                    }
+                } 
+            }
+
+            int totalKeyPresses = statistics.Sum();
+            for (int i = 0; i < statistics.Length; i++)
+            {
+                Console.WriteLine($"Ujj {i+1}: {statistics[i]} ({(double)statistics[i] / totalKeyPresses:P})");
             }
         }
 
