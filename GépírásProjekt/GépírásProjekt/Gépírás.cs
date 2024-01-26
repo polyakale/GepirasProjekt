@@ -39,8 +39,8 @@ namespace GépírásProjekt
             // Writes it to the console like a table
             Console.WriteLine("|=======|==================|======================|");
             string fingerHeader = "Ujj"; //Finger
-            string TnoktwpHeader = "Lenyomások száma"; //The number of keys that were pressed = T.n.o.k.t.w.p (Tnoktwp)
-            string LipHeader = "Terhelés százalékban"; //Load in percentage = L.i.p. (Lip)
+            string TnoktwpHeader = "Lenyomások száma"; //The number of keys that were pressed -shortended-> T.n.o.k.t.w.p (Tnoktwp)  
+            string LipHeader = "Terhelés százalékban"; //Load in percentage -shortended-> L.i.p. (Lip)
             Console.WriteLine($"| {GetCentered(fingerHeader, 5)} | {GetCentered(TnoktwpHeader, 16)} | {GetCentered(LipHeader, 20)} |");
             Console.WriteLine("|=======|==================|======================|");
             for (int i = 0; i < statistics.Length; i++)
