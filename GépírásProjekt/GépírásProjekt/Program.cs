@@ -11,13 +11,13 @@ namespace GépírásProjekt
     {
         static void Main(string[] args)
         {
-            ////Példa: szövegen végigmenni
-            //string szöveg = "Bafgaarargfva";
-            //for (int i = 0; i < szöveg.Length; i++) {
-            //    Console.WriteLine(szöveg[i]);
+            ////Example: go through the text
+            //string exampleText = "BafgaaAnobwpeFDSrargfva";
+            //for (int i = 0; i < exampleText.Length; i++) {
+            //    Console.WriteLine(exampleText[i]);
             //}
             string file = "szoveg.txt";
-            //string path = @"C:\tanulók\2023-2024\12.D\Polyák Alex János\1. FÉLÉV\PROJEKT\GepirasProjekt\GépírásProjekt\GépírásProjekt\bin\Debug\szoveg.txt"; // nem szükséges
+            //string path = @"\1. FÉLÉV\PROJEKT\GepirasProjekt\GépírásProjekt\GépírásProjekt\bin\Debug\szoveg.txt"; // not needed
             if (!File.Exists(file))
             {
                 Console.WriteLine($"The file '{file}' does not exist.");

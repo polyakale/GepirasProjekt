@@ -34,14 +34,68 @@ namespace GépírásProjekt
                     }
                 } 
             }
-
             int totalKeyPresses = statistics.Sum();
+
+            // Writes it to the console like a table
+            Console.WriteLine("|=======|==================|======================|");
+            string ujjHeader = "Ujj";
+            string lenyomasokHeader = "Lenyomások száma";
+            string terhelesHeader = "Terhelés százalékban";
+            Console.WriteLine($"| {GetCentered(ujjHeader, 5)} | {GetCentered(lenyomasokHeader, 16)} | {GetCentered(terhelesHeader, 20)} |");
+            Console.WriteLine("|=======|==================|======================|");
             for (int i = 0; i < statistics.Length; i++)
             {
-                Console.WriteLine($"Ujj {i+1}: {statistics[i]} ({(double)statistics[i] / totalKeyPresses:P})");
+                string ujjData = $"Ujj {i + 1}";
+                string lenyomasokData = $"{statistics[i]}";
+                string terhelesData = $"{(double)statistics[i] / totalKeyPresses:P}";
+
+                Console.WriteLine($"| {GetCentered(ujjData, 5)} | {GetCentered(lenyomasokData, 16)} | {GetCentered(terhelesData, 20)} |");
             }
+            Console.WriteLine("|=======|==================|======================|");
+            CreateCharacterDataFile();
         }
 
+        // It creates the "karakteradatgyujtes.txt" file
+        internal void CreateCharacterDataFile()
+        {
+            // How many times does one individual character occurs
+            Dictionary<char, int> characterCounts = new Dictionary<char, int>();
+            string text = File.ReadAllText(file);
+            foreach (var ch in text)
+            {
+                if (characterCounts.ContainsKey(ch))
+                {
+                    characterCounts[ch]++;
+                }
+                else
+                {
+                    characterCounts[ch] = 1;
+                }
+            }
+            List<string> lines = new List<string>();
+            lines.Add("karakter;kéz;ujj;karaterleütés-szám");
+
+            foreach (var character in characters)
+            {
+                string hand = character.pressingFinger <= 5 ? "bal" : "jobb";
+                int characterCount = characterCounts.ContainsKey(character.character) ? characterCounts[character.character] : 0;
+                lines.Add($"{character.character};{hand};{character.pressingFinger};{characterCount}");
+            }
+            var sortedLines = lines.Skip(1).OrderByDescending(line => int.Parse(line.Split(';')[3])).ToList();
+            sortedLines.Insert(0, lines[0]); // It puts back the header
+
+            File.WriteAllLines("karakteradatgyujtes.txt", sortedLines);
+        }
+
+        // Gets things centered
+        private static string GetCentered(string text, int width)
+        {
+            int padding = width - text.Length;
+            int padLeft = padding / 2 + text.Length;
+            return text.PadLeft(padLeft).PadRight(width);
+        }
+
+        // The "fingerOrder.csv" file gets readin the program
         private void ReadIn()
         {
             string[] rows = File.ReadAllLines(charactherFile);
@@ -55,6 +109,5 @@ namespace GépírásProjekt
                 fingerMapping.Add(character, new Tuple<int, int>(pressingFinger, additionalPressingFinger));
             }
         }
-
     }
 }
