@@ -38,18 +38,18 @@ namespace GépírásProjekt
 
             // Writes it to the console like a table
             Console.WriteLine("|=======|==================|======================|");
-            string ujjHeader = "Ujj";
-            string lenyomasokHeader = "Lenyomások száma";
-            string terhelesHeader = "Terhelés százalékban";
-            Console.WriteLine($"| {GetCentered(ujjHeader, 5)} | {GetCentered(lenyomasokHeader, 16)} | {GetCentered(terhelesHeader, 20)} |");
+            string fingerHeader = "Ujj"; //Finger
+            string TnoktwpHeader = "Lenyomások száma"; //The number of keys that were pressed = T.n.o.k.t.w.p (Tnoktwp)
+            string LipHeader = "Terhelés százalékban"; //Load in percentage = L.i.p. (Lip)
+            Console.WriteLine($"| {GetCentered(fingerHeader, 5)} | {GetCentered(TnoktwpHeader, 16)} | {GetCentered(LipHeader, 20)} |");
             Console.WriteLine("|=======|==================|======================|");
             for (int i = 0; i < statistics.Length; i++)
             {
-                string ujjData = $"Ujj {i + 1}";
-                string lenyomasokData = $"{statistics[i]}";
-                string terhelesData = $"{(double)statistics[i] / totalKeyPresses:P}";
+                string fingerData = $"Ujj {i + 1}";
+                string LipData = $"{statistics[i]}"; //Explanation on line 43
+                string TnoktwpData = $"{(double)statistics[i] / totalKeyPresses:P}"; //Explanation on line 42
 
-                Console.WriteLine($"| {GetCentered(ujjData, 5)} | {GetCentered(lenyomasokData, 16)} | {GetCentered(terhelesData, 20)} |");
+                Console.WriteLine($"| {GetCentered(fingerData, 5)} | {GetCentered(LipData, 16)} | {GetCentered(TnoktwpData, 20)} |");
             }
             Console.WriteLine("|=======|==================|======================|");
             CreateCharacterDataFile();
@@ -77,7 +77,7 @@ namespace GépírásProjekt
 
             foreach (var character in characters)
             {
-                string hand = character.pressingFinger <= 5 ? "bal" : "jobb";
+                string hand = character.pressingFinger <= 5 ? "bal" : "jobb"; // "left" : "right"
                 int characterCount = characterCounts.ContainsKey(character.character) ? characterCounts[character.character] : 0;
                 lines.Add($"{character.character};{hand};{character.pressingFinger};{characterCount}");
             }
