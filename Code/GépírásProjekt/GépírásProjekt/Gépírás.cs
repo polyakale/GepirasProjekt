@@ -37,21 +37,24 @@ namespace GépírásProjekt
             int totalKeyPresses = statistics.Sum();
 
             // Writes it to the console like a table
-            Console.WriteLine("|=======|==================|======================|");
+            int o1 = 7;
+            int o2 = 18;
+            int o3 = 22;
+            Console.WriteLine($"|{new String('=',o1)}|{new String('=', o2)}|{new String('=', o3)}|");
             string fingerHeader = "Ujj"; //Finger
             string TnoktwpHeader = "Lenyomások száma"; //The number of keys that were pressed -shortended-> T.n.o.k.t.w.p (Tnoktwp)  
             string LipHeader = "Terhelés százalékban"; //Load in percentage -shortended-> L.i.p. (Lip)
-            Console.WriteLine($"| {GetCentered(fingerHeader, 5)} | {GetCentered(TnoktwpHeader, 16)} | {GetCentered(LipHeader, 20)} |");
-            Console.WriteLine("|=======|==================|======================|");
+            Console.WriteLine($"| {GetCentered(fingerHeader, o1-2)} | {GetCentered(TnoktwpHeader, o2-3)} | {GetCentered(LipHeader, o3-2)} |");
+            Console.WriteLine($"|{new String('=', o1)}|{new String('=', o2)}|{new String('=', o3)}|");
             for (int i = 0; i < statistics.Length; i++)
             {
                 string fingerData = $"Ujj {i + 1}";
                 string LipData = $"{statistics[i]}"; //Explanation on line 43
                 string TnoktwpData = $"{(double)statistics[i] / totalKeyPresses:P}"; //Explanation on line 42
 
-                Console.WriteLine($"| {GetCentered(fingerData, 5)} | {GetCentered(LipData, 16)} | {GetCentered(TnoktwpData, 20)} |");
+                Console.WriteLine($"| {GetCentered(fingerData, o1-2)} | {GetCentered(LipData, o2-2)} | {GetCentered(TnoktwpData, o3-2)} |");
             }
-            Console.WriteLine("|=======|==================|======================|");
+            Console.WriteLine($"|{new String('=', o1)}|{new String('=', o2)}|{new String('=', o3)}|");
             CreateCharacterDataFile();
         }
 
