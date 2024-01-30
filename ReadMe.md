@@ -1,0 +1,2 @@
+# A Feladat műkődésének leírása
+A feladatban egy szövegfájlt (`szoveg.txt`) elemzünk a megadot csv fájl (`fingerOrder.csv`) segítségével és az ujjak terhelését egy `StatisticalAnalysis()` function-al kapjuk meg
