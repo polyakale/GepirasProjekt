@@ -25,7 +25,6 @@ namespace GépírásProjekt
                 gí.StatisticalAnalysis();
             }
 
-
             Console.ReadLine();
         }
     }
