@@ -88,6 +88,7 @@ namespace GépírásProjekt
             sortedLines.Insert(0, lines[0]); // It puts back the header
 
             File.WriteAllLines("karakteradatgyujtes.txt", sortedLines);
+            Console.WriteLine("\nA karakteradatgyujtes.txt sikeresen le let kreálva.");
         }
 
         // Gets things centered
