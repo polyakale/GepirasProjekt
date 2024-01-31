@@ -3,5 +3,8 @@ A program célja, hogy elemzést végezzen a gépírás mintákról. A program a
 ## Működés
 1. Megállapítjuk hogy a `szoveg.txt` létezik-e.
 ![](ifExistTextFileCode.png)
+2. Itt a statisztikai elmezést végezük el.
+![](StatisztikaKíszámolásaCode.png)
+És a console-on jól áttekinthető formában megjeleníti az ujjak százalékos és számszerű terhelését.
+![](TáblázatosanKiírjaÉsSzázalékbanIsMegedjaAzUjjakTerhelését.png)
 
-2. 
