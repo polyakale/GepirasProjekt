@@ -3,25 +3,6 @@ A program célja, hogy elemzést végezzen a gépírás mintákról. A program a
 ## Működés
 1. Megállapítjuk hogy a `szoveg.txt` létezik-e.
 
-![](ifExistTextFileCode.png)
-
-2. Itt a statisztikai elmezést végezük el.
-
-![](StatisztikaKíszámolásaCode.png)
-
-És a console-on jól áttekinthető formában megjeleníti az ujjak százalékos és számszerű terhelését.
-
-![](TáblázatosanKiírjaÉsSzázalékbanIsMegedjaAzUjjakTerhelését.png)
-<center>||
-<center>\/</center>
-
-![](ConsoleLíirás.png)
-![](KözépreZár.png)
-Az adatok középrezárása.
-
-</center>
+2. Statisztikai elmezést végezük el és a console-on jól áttekinthető formában megjeleníti az ujjak százalékos és számszerű terhelését.
 
 3. Elkészítjük a `karakteradatgyujtes.txt` fájlt.
-
-![](FileKreálás.png)
-
